@@ -1,0 +1,127 @@
+ {
+    "name": "Divercult",
+    "type": "unity",
+    "uri": "divercult",
+    "version": 1,
+    "tasks": [
+        {
+            "name": "Fase 1",
+            "uri": "fase1",
+            "description": "Criar/editar/selecionar frases para o jogo.",
+            "type": "text_database",
+            "dependencies": null,
+            "outputs": [ 
+                {
+                    "name": "fase1.json",
+                    "type": "json",
+                    "path": "Fase1"
+                },
+                {
+                    "name": "1.png",
+                    "type": "png",
+                    "path": "Fase1"
+                },
+                {
+                    "name": "2.png",
+                    "type": "png",
+                    "path": "Fase1"
+                },
+                {
+                    "name": "3.png",
+                    "type": "png",
+                    "path": "Fase1"
+                },
+                {
+                    "name": "4.png",
+                    "type": "png",
+                    "path": "Fase1"
+                },
+                {
+                    "name": "5.png",
+                    "type": "png",
+                    "path": "Fase1",
+                    "optional": true
+                },
+                {
+                    "name": "6.png",
+                    "type": "png",
+                    "path": "Fase1",
+                    "optional": true
+
+                },
+                {
+                    "name": "7.png",
+                    "type": "png",
+                    "path": "Fase1",
+                    "optional": true
+
+                },
+                {
+                    "name": "8.png",
+                    "type": "png",
+                    "path": "Fase1",
+                    "optional": true
+
+                },
+                {
+                    "name": "0.png",
+                    "type": "png",
+                    "path": "Fase1"
+                    
+
+                }
+            ]
+        },
+        {
+            "name": "Fase 2",
+            "uri": "fase2",
+            "description": "Criar/editar/selecionar atributos dos candidatos.",
+            "type": "image",
+            "dependencies": null,
+            "outputs": [
+                {
+                    "name": "fase2.json",
+                    "type": "json",
+                    "path": "Fase2"
+                }
+            ]
+        },
+        {
+            "name": "Background Fase 3",
+            "uri": "fase3/indexImage",
+            "description": "Criar/editar/selecionar tema de fundo.",
+            "type": "image",
+            "dependencies": null,
+            "outputs": [
+                {
+                    "name": "bg.png",
+                    "type": "png",
+                    "path": "Fase3"
+                }
+            ]
+        },
+        {
+            "name": "Fase 3",
+            "uri": "fase3",
+            "description": "Criar/editar/selecionar texto da casa especial.",
+            "type": "image",
+            "dependencies": null,
+            "outputs": [
+                {
+                    "name": "fase3.json",
+                    "type": "json",
+                    "path": "Fase3"
+                }
+            ]
+        }
+
+
+    ],
+    "outputs": [
+        "desktop"
+    ],
+    "vars": {
+        "width": 1280,
+        "height": 720
+    }
+}
