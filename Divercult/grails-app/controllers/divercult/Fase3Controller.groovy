@@ -91,7 +91,7 @@ def saveImage() {
                     p.getContent()
  
                 }
-        def json = builder(["texto": textos]
+        def json = builder(["imagem": "Fase3/bg.png", "textos": textos]
         )
        
 
