@@ -228,7 +228,7 @@ function _delete() {
     else{
         if(list_id.length==1){
             if(confirm("Você tem certeza que deseja deletar essa questão?")){
-                url = location.origin + '/forca/question/delete/' + list_id[0];
+                url = location.origin + '/divercult/fase3/delete/' + list_id[0];
                 data = {_method: 'DELETE'};
                 trID = "#tr"+list_id[0];
                 $.ajax({
@@ -247,7 +247,7 @@ function _delete() {
         else{
             if(confirm("Você tem certeza que deseja deletar essas questões?")){
                 for(var i=0;i<list_id.length;i++){
-                    url = location.origin + '/forca/question/delete/' + list_id[i];
+                    url = location.origin + '/divercult/fase3/delete/' + list_id[i];
                     data = {_method: 'DELETE'};
                     trID = "#tr"+list_id[i];
                     $(trID).remove();

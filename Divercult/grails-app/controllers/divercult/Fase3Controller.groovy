@@ -5,6 +5,8 @@ import groovy.json.JsonBuilder
 import grails.converters.JSON
 import br.ufscar.sead.loa.remar.api.MongoHelper
 import grails.util.Environment
+import grails.transaction.Transactional
+
 
 @Secured(['isAuthenticated()'])
 
@@ -31,10 +33,9 @@ def springSecurityService
             session.taskId = params.t
         }
 
-    render view: "index", model: [listaPares: Fase3.findAllByOwnerId(session.user.id)
-]    
+    render view: "index", model: [listaPares: Fase3.findAllByOwnerId(session.user.id)]
+    }        
 
-}
     def show() {
         render template: "tile",
                 model: [tileInstance: Tile.findById(params.id)]
@@ -90,7 +91,7 @@ def saveImage() {
                     p.getContent()
  
                 }
-        def json = builder(["textos": textos]
+        def json = builder(["texto": textos]
         )
        
 
@@ -113,6 +114,23 @@ def saveImage() {
 
         redirect uri: "http://${request.serverName}:${port}/process/task/complete/${session.taskId}", params: [files: id]
     }
+    @Transactional
+    def delete(Fase3 questionInstance) {
+        if (questionInstance == null) {
+            notFound()
+            return
+        }
+
+        questionInstance.delete flush: true
+
+        if (request.isXhr()) {
+            render(contentType: "application/json") {
+                JSON.parse("{\"id\":" + questionInstance.getId() + "}")
+            }
+        } else {
+            // TODO
+        }
+    }
         
-    
-}
+}   
+        

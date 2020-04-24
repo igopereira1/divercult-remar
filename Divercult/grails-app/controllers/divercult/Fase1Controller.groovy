@@ -70,10 +70,10 @@ def save() {
         def list = Fase1.getAll(params.id ? params.id.split(',').toList() : null)
         def builder = new JsonBuilder()
         def textos = list.collect { p ->
-                    p.getContent()
+                    ["texto": p.getContent(), "imagem": "Fase1/${j++}.png" ]
  
                 }
-        def json = builder(["textos": textos]
+        def json = builder(["pares": textos]
         )
     
 
